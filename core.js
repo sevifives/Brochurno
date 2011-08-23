@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochure
-// Copyright: @2011 My Company, Inc.
+// Project:   Brochurno
+// Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochure */
+/*globals Brochurno */
 
 /** @namespace
 
@@ -10,10 +10,10 @@
   
   @extends SC.Object
 */
-Brochure = SC.Application.create(
-  /** @scope Brochure.prototype */ {
+Brochurno = SC.Application.create(
+  /** @scope Brochurno.prototype */ {
 
-  NAMESPACE: 'Brochure',
+  NAMESPACE: 'Brochurno',
   VERSION: '0.1.0',
 
   // This is your application store.  You will use this store to access all

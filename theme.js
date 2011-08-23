@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochure
-// Copyright: @2011 My Company, Inc.
+// Project:   Brochurno
+// Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochure */
+/*globals Brochurno */
 
 // This is the theme that defines how your app renders.
 //
@@ -15,13 +15,13 @@
 //
 // NOTE: if you want to change the theme this one is based on, don't
 // forget to change the :css_theme property in your buildfile.
-Brochure.Theme = SC.AceTheme.create({
-  name: 'brochure'
+Brochurno.Theme = SC.AceTheme.create({
+  name: 'brochurno'
 });
 
 // SproutCore needs to know that your app's theme exists
-SC.Theme.addTheme(Brochure.Theme);
+SC.Theme.addTheme(Brochurno.Theme);
 
 // Setting it as the default theme makes every pane SproutCore
 // creates default to this theme unless otherwise specified.
-SC.defaultTheme = 'brochure';
+SC.defaultTheme = 'brochurno';
