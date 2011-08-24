@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   Brochurno.Image Fixtures
+// Project:   CoreBrochurno.Article Fixtures
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
-sc_require('models/image_model');
+sc_require('models/article_model');
 
-Brochurno.Image.FIXTURES = [
+CoreBrochurno.Article.FIXTURES = [
 
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 

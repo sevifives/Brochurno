@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochurno.Article
+// Project:   CoreBrochurno.Article
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
 /** @class
 
@@ -11,8 +11,8 @@
   @extends SC.Record
   @version 0.1
 */
-Brochurno.Article = SC.Record.extend(
-/** @scope Brochurno.Article.prototype */ {
+CoreBrochurno.Article = SC.Record.extend(
+/** @scope CoreBrochurno.Article.prototype */ {
 
   title: SC.Record.attr(String),
 
@@ -20,10 +20,10 @@ Brochurno.Article = SC.Record.extend(
 
   body: SC.Record.attr(String),
 
-  pdfs: SC.Record.toMany('Brochurno.Pdf',{isNested: YES}),
+  pdfs: SC.Record.toMany('CoreBrochurno.Pdf',{isNested: YES}),
 
-  images: SC.Record.toMany('Brochurno.Image',{isNested: YES}),
+  images: SC.Record.toMany('CoreBrochurno.Image',{isNested: YES}),
 
-  videos: SC.Record.toMany('Brochurno.Video',{isNested: YES})
+  videos: SC.Record.toMany('CoreBrochurno.Video',{isNested: YES})
 
 }) ;

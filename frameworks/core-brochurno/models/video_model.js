@@ -1,8 +1,10 @@
 // ==========================================================================
-// Project:   Brochurno.Section
+// Project:   CoreBrochurno.Video
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
+
+sc_require('models/attachment_model');
 
 /** @class
 
@@ -11,13 +13,9 @@
   @extends SC.Record
   @version 0.1
 */
-Brochurno.Section = SC.Record.extend(
-/** @scope Brochurno.Section.prototype */ {
+CoreBrochurno.Video = CoreBrochurno.Attachment.extend(
+/** @scope CoreBrochurno.Video.prototype */ {
 
-  title: SC.Record.attr(String),
-
-  description: SC.Record.attr(String),
-
-  articles: SC.Record.toMany('Brochurno.Article',{isNested: YES})
+  quality: SC.Record.attr(String)
 
 }) ;

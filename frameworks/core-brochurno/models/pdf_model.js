@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochurno.Pdf
+// Project:   CoreBrochurno.Pdf
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
 sc_require('models/attachment_model');
 
@@ -13,8 +13,8 @@ sc_require('models/attachment_model');
   @extends SC.Record
   @version 0.1
 */
-Brochurno.Pdf = Brochurno.Attachment.extend(
-/** @scope Brochurno.Pdf.prototype */ {
+CoreBrochurno.Pdf = CoreBrochurno.Attachment.extend(
+/** @scope CoreBrochurno.Pdf.prototype */ {
 
 
 }) ;

@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochurno.Attachment
+// Project:   CoreBrochurno.Attachment
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
 /** @class
 
@@ -11,8 +11,8 @@
   @extends SC.Record
   @version 0.1
 */
-Brochurno.Attachment = SC.Record.extend(
-/** @scope Brochurno.Attachment.prototype */ {
+CoreBrochurno.Attachment = SC.Record.extend(
+/** @scope CoreBrochurno.Attachment.prototype */ {
 
   title: SC.Record.attr(String),
 

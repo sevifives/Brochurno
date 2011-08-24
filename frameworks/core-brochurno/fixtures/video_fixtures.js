@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   Brochurno.Pdf Fixtures
+// Project:   CoreBrochurno.Video Fixtures
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
-sc_require('models/pdf_model');
+sc_require('models/video_model');
 
-Brochurno.Pdf.FIXTURES = [
+CoreBrochurno.Video.FIXTURES = [
 
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 

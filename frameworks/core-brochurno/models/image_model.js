@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Brochurno.Image
+// Project:   CoreBrochurno.Image
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
 sc_require('models/attachment_model');
 
@@ -13,8 +13,8 @@ sc_require('models/attachment_model');
   @extends SC.Record
   @version 0.1
 */
-Brochurno.Image = Brochurno.Attachment.extend(
-/** @scope Brochurno.Image.prototype */ {
+CoreBrochurno.Image = CoreBrochurno.Attachment.extend(
+/** @scope CoreBrochurno.Image.prototype */ {
 
   thumbUrl: SC.Record.attr(String),
 

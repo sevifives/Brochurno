@@ -7,10 +7,28 @@
 // This page describes a part of the interface for your application.
 Brochurno.sectionPage = SC.Page.design({
 
-  // Add your views here.  Ex:
-  
-  // mainView: SC.View.design({
-  //   layout: { top: 0, left: 0, right: 0, height: 0 }
-  // })
+  sectionPage: SC.View.extend({
+    childViews: ['title'],
 
+    classNames: ['section'],
+
+    title: SC.LabelView.design({
+      layout: {left: 10,height: 50,width: 150},
+      valueBinding: SC.Binding.oneWay('Brochurno.sectionController.title')
+    })
+  }),
+
+  _createdSections: {},
+
+  unknownProperty: function (k,name) {
+    console.log(k,name);
+    var createdSections = this._createdSections;
+    if (createdSections[name]) {return createdSections[name];}
+
+    var view = this.get('section').create({
+      layerId: name
+    });
+
+    return this._createdSections[name] = view;
+  }.property()
 });

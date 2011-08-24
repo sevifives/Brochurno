@@ -11,14 +11,42 @@ Brochurno.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'labelView'.w(),
-    
-    labelView: SC.LabelView.design({
-      layout: { centerX: 0, centerY: 0, width: 200, height: 18 },
-      textAlign: SC.ALIGN_CENTER,
-      tagName: "h1", 
-      value: "Welcome to SproutCore!"
+    childViews: ['header','content','footer'],
+
+    header: SC.View.design({
+      layout: {height: 100,top: 0},
+
+      childViews: ['logo','tabs'],
+
+      logo: SC.LabelView.design({
+        layout: {centerY: 0, height: 75, width: 200,left: 10},
+        layerId: 'main-logo',
+        classNames: ['logo'],
+        value: "_Brochurno".loc()
+      }),
+
+      tabs: SC.SegmentedView.design({
+        layout: {centerY: 0,height: 50, right: 10},
+        scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (section) {
+          return section ? 'Brochurno.sectionPage.'+section.camelize() : null;
+        })
+      })
+    }),
+
+    content: SC.SceneView.design({
+    }),
+
+    footer: SC.View.design({
+      layout: {bottom: 0,height: 50},
+      childViews: ['logo'],
+
+      logo: SC.LabelView.design({
+        layout: {right: 10,height: 25,centerY: 0,width: 85},
+        classNames: ['logo'],
+        value: "_Brochurno".loc()
+      })
     })
+
   })
 
 });

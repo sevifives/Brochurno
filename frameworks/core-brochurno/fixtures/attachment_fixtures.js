@@ -1,12 +1,12 @@
 // ==========================================================================
-// Project:   Brochurno.Article Fixtures
+// Project:   CoreBrochurno.Attachment Fixtures
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
-/*globals Brochurno */
+/*globals CoreBrochurno */
 
-sc_require('models/article_model');
+sc_require('models/attachment_model');
 
-Brochurno.Article.FIXTURES = [
+CoreBrochurno.Attachment.FIXTURES = [
 
   // TODO: Add your data fixtures here.
   // All fixture records must have a unique primary key (default 'guid').  See 

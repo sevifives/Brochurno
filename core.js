@@ -10,7 +10,7 @@
   
   @extends SC.Object
 */
-Brochurno = SC.Application.create(
+Brochurno = SC.Application.create(CoreBrochurno,
   /** @scope Brochurno.prototype */ {
 
   NAMESPACE: 'Brochurno',
