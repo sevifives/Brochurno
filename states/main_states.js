@@ -25,6 +25,7 @@ Brochurno.mixin({
     brochurnoReady: SC.State.design({
       enterState: function () {
         console.log('Sections Loaded.');
+        Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.home');
       }
     })
   })

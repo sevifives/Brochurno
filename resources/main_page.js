@@ -27,13 +27,20 @@ Brochurno.mainPage = SC.Page.design({
 
       tabs: SC.SegmentedView.design({
         layout: {centerY: 0,height: 50, right: 10},
-        scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (sections) {
-          return sections.getEach('tag');
-        })
       })
     }),
 
     content: SC.SceneView.design({
+      layout: {top: 100,bottom: 50},
+      scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (sections) {
+          var tags = sections.getEach('tag');
+          for (var i=0,l=tags.length;i<l;i++) {
+            tags[i] = 'Brochurno.sectionPage.'+tags[i].camelize();
+          }
+          console.log(tags);
+          return tags;
+        }),
+        nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
     footer: SC.View.design({
