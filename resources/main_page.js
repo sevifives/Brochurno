@@ -27,8 +27,8 @@ Brochurno.mainPage = SC.Page.design({
 
       tabs: SC.SegmentedView.design({
         layout: {centerY: 0,height: 50, right: 10},
-        scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (section) {
-          return section ? 'Brochurno.sectionPage.'+section.camelize() : null;
+        scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (sections) {
+          return sections.getEach('tag');
         })
       })
     }),

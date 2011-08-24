@@ -10,5 +10,5 @@
 # This line tells SproutCore's CSS preprocessor what class names to target.
 # Since your app has a theme named 'brochurno', and it is based on SproutCore's
 # Ace theme (named 'ace'), it is set to 'ace.brochurno'.
-config :brochurno, :css_theme => 'ace.brochurno', :required => [:sproutcore,:'core-brochurno']
+config :brochurno, :css_theme => 'ace.brochurno', :required => [:sproutcore,:'core-brochurno',:scui]
 

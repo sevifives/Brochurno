@@ -10,9 +10,12 @@
 
   @extends SC.Array
 */
-Brochurno.sectionsController = SC.ArrayController.create(
+Brochurno.sectionsController = SC.ArrayController.create(SCUI.StatusChanged,
 /** @scope Brochurno.sectionsController.prototype */ {
 
-  // TODO: Add your own code here.
+  contentStatusDidChange: function () {
+    if (this.get('status') !== SC.Record.READY_CLEAN) { return; }
+    Brochurno.statechart.sendEvent('sectionsFinishedLoading');
+  }
 
 }) ;
