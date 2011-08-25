@@ -13,18 +13,22 @@
 Brochurno.SectionView = SC.View.extend(
 /** @scope Brochurno.SectionView.prototype */ {
 
-  title: null,
+  object: null,
+
+  title: function () {
+    return this.getPath('object.title');
+  }.property('object.title').cacheable(),
 
   classNames: ['section'],
 
   createChildViews: function () {
     var childViews = [],self=this;
-    var view = this.createChildView(SC.LabelView,{
-      classNames: ['section-title'],
-      layout: {left: 10,height: 50,width: 150},
-      valueBinding: SC.Binding.from('title',self)
-    });
+    var object = this.get('object');
 
+    view = this.createChildView(SC.StaticContentView,{
+      layout: {top: 0,left: 10,right: 10},
+      contentBinding: SC.Binding.from('description',object).oneWay()
+    });
     childViews.push(view);
 
     this.set('childViews',childViews);

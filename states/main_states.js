@@ -12,8 +12,6 @@ Brochurno.mixin({
 
     brochurnoLoading: SC.State.design({
       enterState: function () {
-        console.log('Brochurno loading...');
-
         Brochurno.sectionsController.set('content',Brochurno.store.find(Brochurno.Section));
       },
 
@@ -24,8 +22,11 @@ Brochurno.mixin({
 
     brochurnoReady: SC.State.design({
       enterState: function () {
-        console.log('Sections Loaded.');
         Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.home');
+      },
+
+      openState: function (x,y,z) {
+        console.log('open state:',x,y,z);
       }
     })
   })

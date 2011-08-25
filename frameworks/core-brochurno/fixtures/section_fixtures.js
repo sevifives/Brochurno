@@ -17,6 +17,12 @@ CoreBrochurno.Section.FIXTURES = [
     guid: 2,
     title: 'About',
     description: 'My valiant attempt to create a sproutcore brochure \'framework\' that I can use and others can reference'
+  },
+
+  {
+    guid: 3,
+    title: 'History',
+    description: 'Not a lot going on here.'
   }
 
 ];
