@@ -16,7 +16,7 @@ Brochurno.mainPage = SC.Page.design({
     header: SC.View.design({
       layout: {height: 100,top: 0},
 
-      childViews: ['logo','tabs'],
+      childViews: ['tabs','logo'],
 
       logo: SC.LabelView.design({
         layout: {centerY: 0, height: 75, width: 200,left: 10},
@@ -27,15 +27,8 @@ Brochurno.mainPage = SC.Page.design({
 
       tabs: SC.SegmentedView.design({
         layout: {centerY: 0,height: 50, right: 10},
-        itemsBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (sections) {
-          if (!sections || sections.get('length') === 0) {return;}
-          var objects = [];
-          for (var i=0,l=sections.get('length');i<l;i++) {
-            var section = sections.objectAt(i);
-            objects.push({name: section.get('title'),value: 'Brochurno.sectionPage.'+section.get('tag').camelize(),action: 'openSection'});
-          }
-          return objects;
-        }),
+        align: SC.ALIGN_RIGHT,
+        itemsBinding: SC.Binding.oneWay('Brochurno.sectionsController.sceneItems'),
         itemTitleKey: 'name',
         itemValueKey: 'value',
         valueBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing')
@@ -44,16 +37,8 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layout: {top: 100,bottom: 50},
-      scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.content').transform(function (sections) {
-          if (!sections) { return; }
-          var tags = sections.getEach('tag');
-          for (var i=0,l=tags.length;i<l;i++) {
-            tags[i] = 'Brochurno.sectionPage.'+tags[i].camelize();
-          }
-          console.log(tags);
-          return tags;
-        }),
-        nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
+      scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
+      nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
     footer: SC.View.design({

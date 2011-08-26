@@ -19,7 +19,13 @@ CoreBrochurno.Section = SC.Record.extend(
   tag: function () {
     var title = this.get('title');
     if (!title) {return;}
-    return title.replace(/[^\w\s]/g,'').dasherize();
+    return title.dasherize();
+  }.property('title').cacheable(),
+
+  name: function () {
+    var title = this.get('title');
+    if (!title) {return;}
+    return title.camelize();
   }.property('title').cacheable(),
 
   description: SC.Record.attr(String),
