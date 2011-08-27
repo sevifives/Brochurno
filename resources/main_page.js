@@ -4,12 +4,8 @@
 // ==========================================================================
 /*globals Brochurno */
 
-// This page describes the main user interface for your application.  
 Brochurno.mainPage = SC.Page.design({
 
-  // The main pane is made visible on screen as soon as your app is loaded.
-  // Add childViews to this pane for views to display immediately on page 
-  // load.
   mainPane: SC.MainPane.design({
     childViews: ['header','content','footer'],
 
@@ -28,10 +24,11 @@ Brochurno.mainPage = SC.Page.design({
       tabs: SC.SegmentedView.design({
         layout: {centerY: 0,height: 50, right: 10},
         align: SC.ALIGN_RIGHT,
-        itemsBinding: SC.Binding.oneWay('Brochurno.sectionsController.sceneItems'),
-        itemTitleKey: 'name',
-        itemValueKey: 'value',
-        valueBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing')
+        itemsBinding: SC.Binding.oneWay('Brochurno.sectionsController.content'),
+        itemTitleKey: 'title',
+        itemValueKey: 'guid',
+        action: 'openSection',
+        valueBinding: SC.Binding.from('Brochurno.sectionsController.selection')
       })
     }),
 

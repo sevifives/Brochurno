@@ -28,17 +28,5 @@ Brochurno.sectionsController = SC.ArrayController.create(SCUI.StatusChanged,
       tags[i] = 'Brochurno.sectionPage.'+tags[i];
     }
     return tags;
-  }.property('content').cacheable(),
-
-  sceneItems: function () {
-    var sections = this.get('content');
-    if (!sections) {return;}
-    var objects = [];
-    for (var i=0,l=sections.get('length');i<l;i++) {
-      var section = sections.objectAt(i);
-      objects.push({name: section.get('title'),value: 'Brochurno.sectionPage.'+section.get('name')});
-    }
-    return objects;
   }.property('content').cacheable()
-
-}) ;
+});

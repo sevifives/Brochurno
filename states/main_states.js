@@ -22,12 +22,15 @@ Brochurno.mixin({
 
     brochurnoReady: SC.State.design({
       enterState: function () {
-        Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.home');
-      },
-
-      openState: function (x,y,z) {
-        console.log('open state:',x,y,z);
+        var id = Brochurno.sectionsController.getPath('firstObject.guid');
+        Brochurno.sectionsController.set('selection',id);
+        Brochurno.statechart.sendEvent('openSection',null,id);
       }
-    })
+    }),
+
+    openSection: function (view,value) {
+      var section = Brochurno.sectionsController.findProperty('guid',value);
+      if (section) Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
+    }
   })
 });

@@ -16,8 +16,8 @@ Brochurno.sectionPage = SC.Page.design(SC.Enumerable,{
 
     var object = Brochurno.sectionsController.findProperty('tag',name.dasherize());
     var view = Brochurno.SectionView.create({
-      layerId: name,
-      object: object
+      layerId: name.dasherize(),
+      content: object
     });
 
     return this._createdSections[name] = view;
