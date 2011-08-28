@@ -30,6 +30,6 @@ CoreBrochurno.Section = SC.Record.extend(
 
   description: SC.Record.attr(String),
 
-  articles: SC.Record.toMany('CoreBrochurno.Article',{isNested: YES})
+  articles: SC.Record.toMany('CoreBrochurno.Article',{inverse: 'section',isMaster: YES})
 
 }) ;

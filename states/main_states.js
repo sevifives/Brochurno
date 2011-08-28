@@ -25,12 +25,18 @@ Brochurno.mixin({
         var id = Brochurno.sectionsController.getPath('firstObject.guid');
         Brochurno.sectionsController.set('selection',id);
         Brochurno.statechart.sendEvent('openSection',null,id);
-      }
-    }),
+      },
 
-    openSection: function (view,value) {
-      var section = Brochurno.sectionsController.findProperty('guid',value);
-      if (section) Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
-    }
+      openSection: function (view,value) {
+        var section = Brochurno.sectionsController.findProperty('guid',value);
+        Brochurno.articleController.set('content',null);
+        if (section) {
+          Brochurno.sectionController.set('content',section);
+          Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
+        }
+      },
+
+      exitState: function () { }
+    })
   })
 });

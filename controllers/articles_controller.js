@@ -12,7 +12,5 @@
 */
 Brochurno.articlesController = SC.ArrayController.create(
 /** @scope Brochurno.articlesController.prototype */ {
-
-  // TODO: Add your own code here.
-
+  contentBinding: SC.Binding.from('Brochurno.sectionController.articles')
 }) ;

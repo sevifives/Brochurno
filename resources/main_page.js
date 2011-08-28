@@ -7,7 +7,7 @@
 Brochurno.mainPage = SC.Page.design({
 
   mainPane: SC.MainPane.design({
-    childViews: ['header','content','footer'],
+    childViews: ['header','content','articleView','footer'],
 
     header: SC.View.design({
       layout: {height: 100,top: 0},
@@ -36,6 +36,14 @@ Brochurno.mainPage = SC.Page.design({
       layout: {top: 100,bottom: 50},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
+    }),
+
+    articleView: SC.ScrollView.design({
+      layout: {top: 100,bottom: 50,left: 420,right: 0},
+      isVisibleBinding: SC.Binding.oneWay('Brochurno.articlesController*selection.length').bool(),
+      contentView: SC.StaticContentView.design({
+        contentBinding: SC.Binding.oneWay('Brochurno.articleController.body')
+      })
     }),
 
     footer: SC.View.design({

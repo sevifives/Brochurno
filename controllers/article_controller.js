@@ -12,7 +12,5 @@
 */
 Brochurno.articleController = SC.ObjectController.create(
 /** @scope Brochurno.articleController.prototype */ {
-
   contentBinding: SC.Binding.from('Brochurno.articlesController.selection').single()
-
 }) ;

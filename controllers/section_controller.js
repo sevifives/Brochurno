@@ -13,6 +13,4 @@
 Brochurno.sectionController = SC.ObjectController.create(
 /** @scope Brochurno.sectionController.prototype */ {
 
-  contentBinding: SC.Binding.from('Brochurno.sectionsController.selection').single()
-
 }) ;
