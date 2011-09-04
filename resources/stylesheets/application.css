@@ -1,0 +1,139 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+body {
+  font-size: 1em;
+}
+
+.brochurno .sc-segmented-view {
+  width: auto;
+}
+.brochurno .sc-segmented-view .sc-segment-view, .brochurno .sc-segmented-view .sc-middle-segment {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  padding: 0 10px;
+  font-size: 0.8em;
+}
+.brochurno .sc-segmented-view .sc-segment-view label, .brochurno .sc-segmented-view .sc-middle-segment label {
+  color: #666666;
+  text-shadow: rgba(255, 255, 255, 0.75) 0px 1px 0px;
+}
+.brochurno .sc-segmented-view .sc-segment-view.sc-first-segment {
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -o-border-top-left-radius: 5px;
+  -ms-border-top-left-radius: 5px;
+  -khtml-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.brochurno .sc-segmented-view .sc-segment-view.sc-last-segment {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -o-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  -khtml-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.brochurno .sc-segmented-view .sc-segment-view.sel {
+  background: white;
+}
+
+#header {
+  overflow: visible;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0074b6), color-stop(95%, #00348e));
+  background: -webkit-linear-gradient(#0074b6, #00348e 95%);
+  background: -moz-linear-gradient(#0074b6, #00348e 95%);
+  background: -o-linear-gradient(#0074b6, #00348e 95%);
+  background: -ms-linear-gradient(#0074b6, #00348e 95%);
+  background: linear-gradient(#0074b6, #00348e 95%);
+  border-bottom: 1px solid #0074b6;
+}
+
+#footer {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #222222), color-stop(95%, #333333));
+  background: -webkit-linear-gradient(#222222, #333333 95%);
+  background: -moz-linear-gradient(#222222, #333333 95%);
+  background: -o-linear-gradient(#222222, #333333 95%);
+  background: -ms-linear-gradient(#222222, #333333 95%);
+  background: linear-gradient(#222222, #333333 95%);
+  border-top: #999999 1px solid;
+}
+
+.articles {
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #333333), color-stop(95%, #222222), color-stop(100%, #333333));
+  background: -webkit-linear-gradient(left, #333333, #222222 95%, #333333);
+  background: -moz-linear-gradient(left, #333333, #222222 95%, #333333);
+  background: -o-linear-gradient(left, #333333, #222222 95%, #333333);
+  background: -ms-linear-gradient(left, #333333, #222222 95%, #333333);
+  background: linear-gradient(left, #333333, #222222 95%, #333333);
+}
+.articles .sc-list-item-view {
+  text-align: right;
+}
+.articles .sc-list-item-view .sc-outline label {
+  color: white;
+  margin-right: 10px;
+}
+.articles .sc-list-item-view.sel {
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #111111), color-stop(10%, #222222), color-stop(55%, #222222), color-stop(100%, #111111));
+  background: -webkit-linear-gradient(#111111, #222222 10%, #222222, #111111);
+  background: -moz-linear-gradient(#111111, #222222 10%, #222222, #111111);
+  background: -o-linear-gradient(#111111, #222222 10%, #222222, #111111);
+  background: -ms-linear-gradient(#111111, #222222 10%, #222222, #111111);
+  background: linear-gradient(#111111, #222222 10%, #222222, #111111);
+}

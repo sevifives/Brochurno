@@ -1,0 +1,26 @@
+@import "base"
+@import "general"
+@import "sproutcore"
+
+#header 
+  overflow: visible
+  +background(linear-gradient(#0074b6,#00348e 95%))
+  border-bottom: 1px solid #0074b6
+
+#footer
+  +background(linear-gradient(#222,#333 95%))
+  border-top: #999 1px solid
+
+.articles
+  +background(linear-gradient(left,#333,#222 95%, #333))
+  .sc-list-item-view
+    text-align: right
+    .sc-outline
+      label
+        color: #fff
+        margin-right: 10px
+  .sc-list-item-view.sel
+    border-top: 1px solid #333
+    border-bottom: 1px solid #333
+    +background(linear-gradient(#111,#222 10%,#222, #111))
+

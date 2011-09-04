@@ -1,9 +1,0 @@
-@mixin gradient($first, $second) {
-  background: $second;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$first', endColorstr='$second');
-  background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
-  background: -moz-linear-gradient(top,  $first,  $second);
-}
-#main-logo { @include slice('images/logo.png',$repeat: no-repeat);}
-#header {@include gradient(black, white)}
-

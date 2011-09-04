@@ -1,0 +1,21 @@
+$default-text-shadow-color: rgba(#fff, 0.75)
+$default-text-shadow-blur: 0px
+$default-text-shadow-v-offset: 1px
+.brochurno
+  .sc-segmented-view
+    width: auto
+    .sc-segment-view,.sc-middle-segment
+      background: rgba(#000,0.6)
+      border: none
+      padding: 0 10px
+      font-size: .8em
+      label
+        color: #666
+        @include single-text-shadow
+    .sc-segment-view.sc-first-segment 
+      @include border-top-left-radius(5px)
+    .sc-segment-view.sc-last-segment
+      @include border-top-right-radius(5px)
+    .sc-segment-view.sel
+      background: #fff 
+  

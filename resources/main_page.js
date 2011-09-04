@@ -7,17 +7,17 @@
 Brochurno.mainPage = SC.Page.design({
 
   mainPane: SC.MainPane.design({
-    childViews: ['header','content','articleView','footer'],
+    childViews: ['content','articleView','footer','header'],
 
     header: SC.View.design({
-      layout: {height: 100,top: 0},
+      layout: {height: 75,top: 0},
 
       layerId: 'header',
 
       childViews: ['tabs','logo'],
 
       logo: SC.LabelView.design({
-        layout: {centerY: 0, height: 97, width: 354,left: 10},
+        layout: {height: 97, width: 354,left: 10,top: 2},
         layerId: 'main-logo',
         classNames: ['logo']
       }),
@@ -35,7 +35,7 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layerId: 'main-content',
-      layout: {top: 100,bottom: 50},
+      layout: {top: 75,bottom: 50},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
@@ -54,9 +54,9 @@ Brochurno.mainPage = SC.Page.design({
       layerId: 'footer',
 
       logo: SC.LabelView.design({
-        layout: {right: 10,height: 25,centerY: 0,width: 85},
+        layout: {right: 10,height: 41,centerY: 0,width: 150},
         classNames: ['logo'],
-        value: "_Brochurno".loc()
+        layerId: 'mini-logo'
       })
     })
 

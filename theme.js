@@ -15,7 +15,7 @@
 //
 // NOTE: if you want to change the theme this one is based on, don't
 // forget to change the :css_theme property in your buildfile.
-Brochurno.Theme = SC.AceTheme.create({
+Brochurno.Theme = SC.BaseTheme.create({
   name: 'brochurno'
 });
 

@@ -39,13 +39,14 @@ Brochurno.SectionView = SC.View.extend(
       layout: {top: 0,left: 0,bottom: 0,width: 400},
       isVisibleBinding: SC.Binding.from('articles',object).notEmpty(null,NO).oneWay(),
       contentView: SC.ListView.design({
-        backgroundColor: 'rgba(0,0,0,0.5)',
         classNames: ['articles'],
         selectionBinding: SC.Binding.from('selection',articlesController),
         contentBinding: SC.Binding.from('articles',object).oneWay(),
         contentValueKey: 'title',
         allowsEmptySelection: NO,
-        rowHeight: 30,
+        textAlign: SC.ALIGN_RIGHT,
+        rowHeight: 100,
+        exampleView: SC.ListItemView.extend({textAlign: SC.ALIGN_RIGHT}),
         actOnSelect: YES
       })
     });
