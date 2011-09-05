@@ -22,6 +22,12 @@ Brochurno.mixin({
 
     brochurnoReady: SC.State.design({
       enterState: function () {
+        var sel = Brochurno.sectionsController.get('selection');
+        if (!sel) { this.normalStartup(); }
+        else {Brochurno.statechart.sendEvent('openSection',null,sel);}
+      },
+
+      normalStartup: function () {
         var id = Brochurno.sectionsController.getPath('firstObject.guid');
         Brochurno.sectionsController.set('selection',id);
         Brochurno.statechart.sendEvent('openSection',null,id);
@@ -33,6 +39,7 @@ Brochurno.mixin({
         if (section) {
           Brochurno.sectionController.set('content',section);
           Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
+          SC.routes.informLocation('location','section/%@/%@'.fmt(section.get('id'),section.get('tag')));
         }
       },
 

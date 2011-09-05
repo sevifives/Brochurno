@@ -3,7 +3,7 @@
 // Copyright: @2011 My Company, Inc.
 // ==========================================================================
 /*globals Brochurno */
-
+sc_require('views/scroll_view');
 /** @class
 
   (Document Your View Here)
@@ -26,16 +26,19 @@ Brochurno.SectionView = SC.View.extend(
     var object = this.get('content');
     var articlesController = this.get('articlesController');
 
-    view = this.createChildView(SC.StaticContentView,{
+    view = this.createChildView(SC.ScrollView,{
       layoutBinding: SC.Binding.from('articles',object).oneWay().transform(function (articles) {
         return {top: 0,right: 10,left: (articles && articles.get('length') > 0) ? 420: 10};
       }),
       isVisibleBinding: SC.Binding.from('*selection.length',articlesController).bool().oneWay().not(),
-      contentBinding: SC.Binding.from('description',object).oneWay()
+      contentView: SC.StaticContentView.design({
+        classNames: ['section-content'],
+        contentBinding: SC.Binding.from('description',object).oneWay()
+      })
     });
     childViews.push(view);
 
-    view = this.createChildView(SC.ScrollView,{
+    view = this.createChildView(Brochurno.ScrollView,{
       layout: {top: 0,left: 0,bottom: 0,width: 400},
       isVisibleBinding: SC.Binding.from('articles',object).notEmpty(null,NO).oneWay(),
       contentView: SC.ListView.design({

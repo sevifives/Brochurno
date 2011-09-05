@@ -4,6 +4,8 @@
 // ==========================================================================
 /*globals Brochurno */
 
+sc_require('views/scroll_view');
+
 Brochurno.mainPage = SC.Page.design({
 
   mainPane: SC.MainPane.design({
@@ -23,7 +25,7 @@ Brochurno.mainPage = SC.Page.design({
       }),
 
       tabs: SC.SegmentedView.design({
-        layout: {height: 24, right: 10,bottom: 0},
+        layout: {right: 10,bottom: 0,top: 0},
         align: SC.ALIGN_RIGHT,
         itemsBinding: SC.Binding.oneWay('Brochurno.sectionsController.content'),
         itemTitleKey: 'title',
@@ -35,15 +37,17 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layerId: 'main-content',
-      layout: {top: 75,bottom: 50},
+      layout: {top: 76,bottom: 50},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
-    articleView: SC.ScrollView.design({
+    articleView: Brochurno.ScrollView.design({
       layout: {top: 100,bottom: 50,left: 420,right: 0},
       isVisibleBinding: SC.Binding.oneWay('Brochurno.articlesController*selection.length').bool(),
       contentView: SC.StaticContentView.design({
+        layout: {right: 20},
+        classNames: ['article-content'],
         contentBinding: SC.Binding.oneWay('Brochurno.articleController.body')
       })
     }),

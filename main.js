@@ -16,6 +16,7 @@ Brochurno.main = function main() {
   Brochurno.getPath('mainPage.mainPane').append() ;
   SC.RootResponder.responder.set('defaultResponder',Brochurno.statechart);
 
+  Brochurno.registerRoutes();
   Brochurno.statechart.initStatechart();
 
 } ;

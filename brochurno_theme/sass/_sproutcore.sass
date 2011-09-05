@@ -1,21 +1,15 @@
-$default-text-shadow-color: rgba(#fff, 0.75)
-$default-text-shadow-blur: 0px
-$default-text-shadow-v-offset: 1px
-.brochurno
-  .sc-segmented-view
-    width: auto
-    .sc-segment-view,.sc-middle-segment
-      background: rgba(#000,0.6)
-      border: none
-      padding: 0 10px
-      font-size: .8em
-      label
-        color: #666
-        @include single-text-shadow
-    .sc-segment-view.sc-first-segment 
-      @include border-top-left-radius(5px)
-    .sc-segment-view.sc-last-segment
-      @include border-top-right-radius(5px)
-    .sc-segment-view.sel
-      background: #fff 
-  
+.sc-scroll-view
+  &:hover
+    .sc-scroller-view
+      @include opacity(1)
+  .sc-scroller-view
+    @include opacity(0)
+    @include transition-property(opacity)
+    @include transition-duration(.5s)
+    .thumb
+      right: 2px
+      left: 0px
+      position: absolute
+      background: rgba(#000,0.5)
+      border: 1px solid rgba(#fff,0.5)
+      @include border-radius(5px)
