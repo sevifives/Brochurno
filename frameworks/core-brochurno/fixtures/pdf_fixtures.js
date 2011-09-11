@@ -31,5 +31,13 @@ CoreBrochurno.Pdf.FIXTURES = [
   // { guid: 5,
   //   firstName: "Ryan",
   //   lastName: "Howard" }
+  //
+  {
+    guid: 1,
+    title: 'Test.pdf',
+    filename: 'test.pdf',
+    fileUrl: 'hello',
+    article: 3
+  }
 
 ];

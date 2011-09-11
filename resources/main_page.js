@@ -9,6 +9,8 @@ sc_require('views/scroll_view');
 Brochurno.mainPage = SC.Page.design({
 
   mainPane: SC.MainPane.design({
+    layerId: 'brochurno-app',
+
     childViews: ['content','articleView','footer','header'],
 
     header: SC.View.design({

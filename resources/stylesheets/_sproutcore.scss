@@ -1,0 +1,20 @@
+.sc-scroll-view {
+  &:hover {
+    .sc-scroller-view {
+      @include opacity(1);
+    }
+  }
+  .sc-scroller-view {
+    @include opacity(0);
+    @include transition-property(opacity);
+    @include transition-duration(.5s);
+    .thumb {
+      right: 2px;
+      left: 0px;
+      position: absolute;
+      background: rgba(#000,0.5);
+      border: 1px solid rgba(#fff,0.5);
+      @include border-radius(5px);
+    }
+  }
+}

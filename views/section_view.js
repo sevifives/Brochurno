@@ -55,6 +55,14 @@ Brochurno.SectionView = SC.View.extend(
     });
     childViews.push(view);
 
+    view = this.createChildView(SC.View,{
+      layoutBinding: SC.Binding.from('articles',object).oneWay().transform(function (articles) {
+        return {top: 0,right: 0,height: 30,left: (articles && articles.get('length') > 0) ? 420: 10};
+      }),
+      isVisibleBinding: SC.Binding.from('attachments',object).notEmpty(null,NO).oneWay()
+    });
+    childViews.push(view)
+
     this.set('childViews',childViews);
   }
 

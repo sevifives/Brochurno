@@ -1,9 +1,0 @@
-#main-logo {
-  @include slice('images/logos/logo-large.png',$repeat: no-repeat);
-}
-#mini-logo {
-  @include slice('images/logos/logo-small.png',$repeat: no-repeat);
-}
-#header {
-  @include slice('images/dom/50.png',$repeat: repeat-both);
-}
