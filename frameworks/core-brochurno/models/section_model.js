@@ -19,17 +19,19 @@ CoreBrochurno.Section = SC.Record.extend(
   tag: function () {
     var title = this.get('title');
     if (!title) {return;}
-    return title.dasherize();
+    return title.replace(/[^a-z1-9\s\-\_]/ig,'').dasherize();
   }.property('title').cacheable(),
 
   name: function () {
     var title = this.get('title');
     if (!title) {return;}
-    return title.camelize();
+    return title.replace(/[^a-z1-9\s]/ig,'').camelize();
   }.property('title').cacheable(),
 
   description: SC.Record.attr(String),
 
-  articles: SC.Record.toMany('CoreBrochurno.Article',{inverse: 'section',isMaster: YES})
+  articles: SC.Record.toMany('CoreBrochurno.Article',{inverse: 'section',isMaster: YES}),
+
+  section: SC.Record.toOne('CoreBrochurno.Section',{isMaster: NO})
 
 }) ;

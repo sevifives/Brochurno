@@ -16,14 +16,14 @@ CoreBrochurno.Section.FIXTURES = [
   {
     guid: 2,
     title: 'About',
-    description: 'My valiant attempt to create a sproutcore brochure \'framework\' that I can use and others can reference',
+  description: '<h2>What you can expect to see...</h2>',
     articles: [1,2,3]
   },
 
   {
     guid: 3,
     title: 'Lessons',
-    description: 'All the little things I have picked up along the way'
+    description: "<h2>Some things I wish I had known when I first started.</h2><p>Sproutcore isn\'t the easiest framework for a front-end person to use; it might not be as easy for a person familiar with KVO/KVC MVC, but it can be mastered. Here are some tips, methods, paradigms, and other solutions might be found. If you happen to know of any, I\'d be happy to add them in and give any credit where it is due.</p>"
   }
 
 ];

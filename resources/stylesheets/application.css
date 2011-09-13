@@ -11,6 +11,10 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 #brochurno-app {
   background: #fff;
   font-family: $sans-serif-family;
+  a {
+    color: #d87500;
+    text-decoration: none;
+  }
 }
 
 #header {
@@ -37,7 +41,7 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         @include transition-duration(0.75s);
         font-weight: bold;
         position: relative;
-        top: 35%;
+        top: 2em;
         color: #dedede;
         @include single-text-shadow;
       }
@@ -68,24 +72,34 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   }
 }
 
-.section-content {
+.section-content,.article-content {
   color: #333;
   h2 {
-    font-size: 3em;
+    font-size: 2em;
     font-family: $sans-serif-family;
     line-height: 2em;
+    background: rgba(#000,.05);
+    padding: 10px;
+    color: #0074b6;
+    @include text-shadow(#fff -1px 1px 1px);
+    border-bottom: 2px solid #cecece;
+    -moz-border-bottom-colors: #cecece #fff;
   }
   h3 {
     margin-top: 1em;
     font-size: 1.5em;
     line-height: 2em;
     font-family: $sans-serif-family;
+    color: #0074b6;
+    @include text-shadow(#fff -1px 1px 1px);
+    padding: 0 10px;
   }
   ul {
     margin-left: 30px;
   }
   p {
     margin-top: 1em;
+    padding: 0 10px;
   }
 }
 
@@ -131,4 +145,9 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 }
 #header {
   @include slice('images/dom/50.png',$repeat: repeat-both);
+}
+
+#home {
+  @include transition-property(left);
+  @include transition-duration(200);
 }

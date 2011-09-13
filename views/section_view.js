@@ -26,10 +26,11 @@ Brochurno.SectionView = SC.View.extend(
     var object = this.get('content');
     var articlesController = this.get('articlesController');
 
-    view = this.createChildView(SC.ScrollView,{
+    view = this.createChildView(Brochurno.ScrollView,{
       layoutBinding: SC.Binding.from('articles',object).oneWay().transform(function (articles) {
-        return {top: 0,right: 10,left: (articles && articles.get('length') > 0) ? 420: 10};
+        return {top: 0,right: 0,left: (articles && articles.get('length') > 0) ? 400: 0};
       }),
+      verticalOverlay: YES,
       isVisibleBinding: SC.Binding.from('*selection.length',articlesController).bool().oneWay().not(),
       contentView: SC.StaticContentView.design({
         classNames: ['section-content'],
@@ -48,20 +49,13 @@ Brochurno.SectionView = SC.View.extend(
         contentValueKey: 'title',
         allowsEmptySelection: NO,
         textAlign: SC.ALIGN_RIGHT,
+        action: 'showArticle',
         rowHeight: 100,
         exampleView: SC.ListItemView.extend({textAlign: SC.ALIGN_RIGHT}),
         actOnSelect: YES
       })
     });
     childViews.push(view);
-
-    view = this.createChildView(SC.View,{
-      layoutBinding: SC.Binding.from('articles',object).oneWay().transform(function (articles) {
-        return {top: 0,right: 0,height: 30,left: (articles && articles.get('length') > 0) ? 420: 10};
-      }),
-      isVisibleBinding: SC.Binding.from('attachments',object).notEmpty(null,NO).oneWay()
-    });
-    childViews.push(view)
 
     this.set('childViews',childViews);
   }

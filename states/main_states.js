@@ -22,9 +22,6 @@ Brochurno.mixin({
 
     brochurnoReady: SC.State.design({
       enterState: function () {
-        var sel = Brochurno.sectionsController.get('selection');
-        if (!sel) { this.normalStartup(); }
-        else {Brochurno.statechart.sendEvent('openSection',null,sel);}
       },
 
       normalStartup: function () {
@@ -33,14 +30,32 @@ Brochurno.mixin({
         Brochurno.statechart.sendEvent('openSection',null,id);
       },
 
+      _selectSection: function (section) {
+        if (!section) {return;}
+        Brochurno.sectionController.set('content',section);
+        Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
+      },
+
       openSection: function (view,value) {
         var section = Brochurno.sectionsController.findProperty('guid',value);
         Brochurno.articleController.set('content',null);
         if (section) {
-          Brochurno.sectionController.set('content',section);
-          Brochurno.applicationViewController.set('contentSceneNowShowing','Brochurno.sectionPage.'+section.get('name'));
+          this._selectSection(section);
           SC.routes.informLocation('location','section/%@/%@'.fmt(section.get('id'),section.get('tag')));
         }
+      },
+
+      openArticleFromId: function (articleId) {
+        var article = Brochurno.store.find(Brochurno.Article,parseInt(articleId,10));
+        Brochurno.sectionsController.set('selection',parseInt(article.getPath('section.guid'),10));
+        this._selectSection(article.get('section'));
+        Brochurno.articlesController.selectObject(article);
+      },
+
+      showArticle: function (listView,obj) {
+        var article = obj.firstObject ? obj.get('firstObject') : obj;
+        if (!article) {return;}
+        SC.routes.informLocation('article','article/%@/%@'.fmt(article.get('id'),article.get('tag')));
       },
 
       exitState: function () { }

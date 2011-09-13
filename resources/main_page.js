@@ -39,13 +39,13 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layerId: 'main-content',
-      layout: {top: 76,bottom: 50},
+      layout: {top: 76,bottom: 30},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
     articleView: Brochurno.ScrollView.design({
-      layout: {top: 100,bottom: 50,left: 420,right: 0},
+      layout: {top: 76,bottom: 30,left: 400,right: 0},
       isVisibleBinding: SC.Binding.oneWay('Brochurno.articlesController*selection.length').bool(),
       contentView: SC.StaticContentView.design({
         layout: {right: 20},
@@ -55,15 +55,29 @@ Brochurno.mainPage = SC.Page.design({
     }),
 
     footer: SC.View.design({
-      layout: {bottom: 0,height: 50},
-      childViews: ['logo'],
+      layout: {bottom: 0,height: 30},
+      childViews: ['twitter'],
       layerId: 'footer',
 
-      logo: SC.LabelView.design({
-        layout: {right: 10,height: 41,centerY: 0,width: 150},
-        classNames: ['logo'],
-        layerId: 'mini-logo'
+      twitter: SC.View.design({
+        layout: {width: 100,height: 24,centerY: 0,right: 6},
+        classNames: ['link-button'],
+        icon: 'twitter-icon',
+        render: function (context,firstTime) {
+          if (firstTime) {
+            var twitter = '<a href="http://twitter.com/sevifives" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false">Follow @sevifives</a>';
+            context.push(twitter);
+            context.push('<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>');
+          }
+        }
       })
+
+      // github: SC.LabelView.design(SCUI.SImpleButton,{
+      //   layout: {width: 24,height: 24,centerY: 0,right: 6},
+      //   classNames: ['link-button'],
+      //   icon: 'github-icon',
+      //   action: 'openGithub'
+      // })
     })
 
   })
