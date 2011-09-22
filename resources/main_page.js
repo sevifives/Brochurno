@@ -50,7 +50,13 @@ Brochurno.mainPage = SC.Page.design({
       contentView: SC.StaticContentView.design({
         layout: {right: 20},
         classNames: ['article-content'],
-        contentBinding: SC.Binding.oneWay('Brochurno.articleController.body')
+        contentBinding: SC.Binding.oneWay('Brochurno.articleController.fullBody'),
+        mouseDown: function (evt) {
+          var target = evt.originalTarget || evt.target;
+          if (target && target.className.match(/attachment/)) {
+            Brochurno.statechart.sendEvent('viewAttachment',parseInt(target.attributes['data-id'].value,10),target.attributes['data-type'].value);
+          }
+        }
       })
     }),
 

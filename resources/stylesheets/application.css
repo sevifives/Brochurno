@@ -137,6 +137,14 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   }
 }
 
+.attachment {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 10px;
+  background: #000;
+}
+
 #main-logo {
   @include slice('images/logos/logo-large.png',$repeat: no-repeat);
 }

@@ -16,6 +16,8 @@ sc_require('models/attachment_model');
 CoreBrochurno.Video = CoreBrochurno.Attachment.extend(
 /** @scope CoreBrochurno.Video.prototype */ {
 
+  attachmentType: SC.Record.attr(String,{defaultValue: 'video'}),
+
   quality: SC.Record.attr(String)
 
 }) ;

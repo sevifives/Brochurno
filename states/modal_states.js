@@ -18,6 +18,14 @@ Brochurno.mixin({
           Brochurno.applicationViewController.set('articlesView',view);
           this.gotoState('loadingArticle');
         }
+      },
+
+      viewAttachment: function (guid,type) {
+        var attachment = Brochurno.store.find(Brochurno[type.camelize().capitalize()],guid);
+        if (attachment) {
+          Brochurno.attachmentController.set('content',attachment);
+          this.gotoState('prepareAttachmentViewer');
+        }
       }
     }),
 
@@ -103,6 +111,19 @@ Brochurno.mixin({
         var articlePane = Brochurno.applicationViewController.get('articlePane');
         if (articlePane) {articlePane.destroy();}
         Brochurno.applicationViewController.set('articlesView',null);
+      }
+    }),
+
+    prepareAttachmentViewer: SC.State.design({
+      enterState: function () {
+        var viewer = Brochurno.modalsPage.get('attachmentViewer');
+        this._viewer = viewer;
+        viewer.append()
+      },
+
+      exitState: function () {
+        var viewer = this._viewer;
+        if (viewer) {viewer.remove();}
       }
     })
   })

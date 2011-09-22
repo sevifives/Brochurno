@@ -32,7 +32,24 @@ CoreBrochurno.Article = SC.Record.extend(
 
   body: SC.Record.attr(String),
 
-  attachments: SC.Record.toMany('CoreBrochurno.Attachment',{isMaster: YES, inverse: 'article', isNested: YES}),
+  fullBody: function () {
+    var attachments = [],body,files;
+    ['images','videos','pdfs'].forEach(function (type) {
+      files = this.get(type);
+      if (files) {attachments = attachments.concat(files.toArray());}
+    },this);
+    body = this.get('body');
+    if (attachments && (attachments.get ? attachments.get('length') : attachments.length) > 0) {
+      body += '<div class="attachments">' + attachments.getEach('generateHtmlForFile').join('') + '</div>';
+    }
+    return body;
+  }.property('pdfs','images','videos','body').cacheable(),
+
+  images: SC.Record.toMany('CoreBrochurno.Image',{isMaster: YES, inverse: 'articles'}),
+
+  pdfs: SC.Record.toMany('CoreBrochurno.Pdf',{isMaster: YES, inverse: 'articles'}),
+
+  videos: SC.Record.toMany('CoreBrochurno.Video',{isMaster: YES, inverse: 'articles'}),
 
   section: SC.Record.toOne('CoreBrochurno.Section',{isMaster: NO})
 }) ;

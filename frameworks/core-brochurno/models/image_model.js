@@ -16,6 +16,8 @@ sc_require('models/attachment_model');
 CoreBrochurno.Image = CoreBrochurno.Attachment.extend(
 /** @scope CoreBrochurno.Image.prototype */ {
 
+  attachmentType: SC.Record.attr(String,{defaultValue: 'image'}),
+
   thumbUrl: SC.Record.attr(String),
 
   mediumUrl: SC.Record.attr(String)

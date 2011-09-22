@@ -16,7 +16,7 @@ CoreBrochurno.Section.FIXTURES = [
   {
     guid: 2,
     title: 'About',
-  description: '<h2>What you can expect to see...</h2>',
+    description: '<h2>What you can expect to see...</h2><p>This is just a demonstration area of what you can expect to see from Brochurno. The lessons area will get into better explanations of how I\'ve used Sproutcore and also some paradgims that have become familiar.</p>',
     articles: [1,2,3]
   },
 

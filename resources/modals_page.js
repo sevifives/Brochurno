@@ -7,10 +7,12 @@
 // This page describes a part of the interface for your application.
 Brochurno.modalsPage = SC.Page.design({
 
-  // Add your views here.  Ex:
-  
-  // mainView: SC.View.design({
-  //   layout: { top: 0, left: 0, right: 0, height: 0 }
-  // })
+  loadingPanel: SC.PanelPane.design({
+  }),
 
+  attachmentViewer: SC.PanelPane.design({
+    layout: {left: 100,right: 50,bottom: 50,right: 100},
+    layerId: 'attachment-viewer',
+    backgroundColor: '#ffffff'
+  })
 });

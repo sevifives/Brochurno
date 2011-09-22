@@ -16,5 +16,6 @@ sc_require('models/attachment_model');
 CoreBrochurno.Pdf = CoreBrochurno.Attachment.extend(
 /** @scope CoreBrochurno.Pdf.prototype */ {
 
+  attachmentType: SC.Record.attr(String,{defaultValue: 'pdf'})
 
 }) ;
