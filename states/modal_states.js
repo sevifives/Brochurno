@@ -24,7 +24,7 @@ Brochurno.mixin({
         var attachment = Brochurno.store.find(Brochurno[type.camelize().capitalize()],guid);
         if (attachment) {
           Brochurno.attachmentController.set('content',attachment);
-          this.gotoState('prepareAttachmentViewer');
+          this.gotoState('openAttachment');
         }
       }
     }),
@@ -114,16 +114,31 @@ Brochurno.mixin({
       }
     }),
 
-    prepareAttachmentViewer: SC.State.design({
+    openAttachment: SC.State.design({
       enterState: function () {
         var viewer = Brochurno.modalsPage.get('attachmentViewer');
         this._viewer = viewer;
-        viewer.append()
+        var att = Brochurno.attachmentController.get('content'),type = att.get('attachmentType');
+        
+        var attViewer = Brochurno.modalsPage.get('%@Viewer'.fmt(type));
+
+        var outlet = Brochurno.modalsPage.get('containerContentOutlet');
+        attViewer.set('value',att.get('fileUrl'));
+
+        this.invokeLast(function () {
+          outlet.set('nowShowing',attViewer);
+          viewer.append();
+        });
+      },
+
+      closeAttachment: function () {
+        this.gotoState('noModal');
       },
 
       exitState: function () {
         var viewer = this._viewer;
         if (viewer) {viewer.remove();}
+        Brochurno.attachmentController.set('content',null);
       }
     })
   })

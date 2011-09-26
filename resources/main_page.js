@@ -52,10 +52,14 @@ Brochurno.mainPage = SC.Page.design({
         classNames: ['article-content'],
         contentBinding: SC.Binding.oneWay('Brochurno.articleController.fullBody'),
         mouseDown: function (evt) {
-          var target = evt.originalTarget || evt.target;
-          if (target && target.className.match(/attachment/)) {
+          var target = (evt.originalTarget || evt.target),classNames;
+          if (!target || !target.className) {return NO;}
+          classNames = target.className.split(' ');
+          if (classNames.contains('attachment') || classNames.contains('attachment-link')) {
             Brochurno.statechart.sendEvent('viewAttachment',parseInt(target.attributes['data-id'].value,10),target.attributes['data-type'].value);
+            return;
           }
+          return NO;
         }
       })
     }),

@@ -26,9 +26,11 @@ CoreBrochurno.Article.FIXTURES = [
     guid: 3,
     title: 'And you can have attachments!',
     description: 'I just blew my own mind.',
-    body: "<p><span class=\"attachment-link\" data-id=\"10\" data-type=\"pdf\">Click Me</span>. By using the mouseDown event and some clever classing, you can embed attachments into articles. An admin for this will come later. Or you can embed attachments as icons that interact the same way.</p>",
+    body: "<p><span class=\"attachment-link\" data-id=\"10\" data-type=\"pdf\">Click Me</span>. By using the mouseDown event and some clever classing, you can embed attachments into articles. An admin for this will come later. Or you can embed attachments as icons that interact the same way. Links to other <a href=\"https://github.com/sevifives/Brochurno\">places</a> still work.</p>",
     section: 2,
-    pdfs: [10]
+    pdfs: [10],
+    images: [21],
+    videos: [31]
   }
 
 ];
