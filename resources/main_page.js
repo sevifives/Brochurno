@@ -41,14 +41,14 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layerId: 'main-content',
-      layout: {top: 76,bottom: 44},
+      layout: {top: 76,bottom: 40},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
     // this is the singular view for any article selected
     articleView: Brochurno.ScrollView.design({
-      layout: {top: 76,bottom: 44,left: 400,right: 0},
+      layout: {top: 76,bottom: 40,left: 400,right: 0},
       isVisibleBinding: SC.Binding.oneWay('Brochurno.articlesController*selection.length').bool(),
       contentView: SC.StaticContentView.design({
         layout: {right: 20},
