@@ -10,5 +10,5 @@
 // localized string added to this file!
 //
 SC.stringsFor('English', {
-  // "_String Key": "Localized String"
+  "_Close":"Close"
 }) ;

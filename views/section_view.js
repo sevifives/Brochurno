@@ -4,6 +4,7 @@
 // ==========================================================================
 /*globals Brochurno */
 sc_require('views/scroll_view');
+sc_require('views/middle_list_view');
 /** @class
 
   (Document Your View Here)
