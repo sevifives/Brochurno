@@ -52,7 +52,16 @@ Brochurno.SectionView = SC.View.extend(
         textAlign: SC.ALIGN_RIGHT,
         action: 'showArticle',
         rowHeight: 100,
-        exampleView: SC.ListItemView.extend({textAlign: SC.ALIGN_RIGHT}),
+        exampleView: SC.ListItemView.extend({
+          textAlign: SC.ALIGN_RIGHT,
+          renderLabel: function(context, label) {
+            var desc = this.getPath('content.description');
+            context.push('<label>', label ,'</label>') ;
+            if (desc) {
+              context.push('<p>',SC.RenderContext.escapeHTML(desc),'</p>');
+            }
+          },
+        }),
         actOnSelect: YES
       })
     });

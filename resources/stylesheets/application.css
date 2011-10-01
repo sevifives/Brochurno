@@ -8,6 +8,9 @@ $default-text-shadow-v-offset: 1px;
 $serif-family: "Georgia",Georgia,serif;
 $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
 
+strong {
+  font-weight: bold;
+}
 #brochurno-app {
   background: #fff;
   font-family: $sans-serif-family;
@@ -114,12 +117,26 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   .sc-list-item-view {
     @include transition-property(background-color);
     @include transition-duration(0.5s);
+    p {
+      @include transition-property(left);
+      @include transition-duration(0.5s);
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      top: 50%;
+      margin-top: 5px;
+      color: rgba(#fff,0.75);
+      font-size: .8em;
+    }
     &:hover {
       background-color: #111111;
       .sc-outline {
         label {
           left: 30px;
         }
+      }
+      p {
+        left: 30px;
       }
     }
     border-top: 1px solid #333333;
@@ -129,6 +146,7 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
         @include transition-duration(0.5s);
         color: white;
         left: 10px;
+        margin-top: -15px;
       }
     }
   }
@@ -138,6 +156,9 @@ $sans-serif-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     .sc-outline {
       label {
         left: 30px; 
+      }
+      p {
+        left: 30px;
       }
     }
   }

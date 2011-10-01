@@ -17,13 +17,14 @@ CoreBrochurno.Section.FIXTURES = [
     guid: 2,
     title: 'About',
     description: '<h2>What you can expect to see...</h2><p>This is just a demonstration area of what you can expect to see from Brochurno. The lessons area will get into better explanations of how I\'ve used Sproutcore and also some paradgims that have become familiar.</p>',
-    articles: [1,2,3]
+    articles: [1,3]
   },
 
   {
     guid: 3,
     title: 'Lessons',
-    description: "<h2>Some things I wish I had known when I first started.</h2><p>Sproutcore isn\'t the easiest framework for a front-end person to use; it might not be as easy for a person familiar with KVO/KVC MVC, but it can be mastered. Here are some tips, methods, paradigms, and other solutions might be found. If you happen to know of any, I\'d be happy to add them in and give any credit where it is due.</p>"
+    description: "<h2>Some things I wish I had known when I first started.</h2><p>Sproutcore isn\'t the easiest framework for a front-end person to use; it might not be as easy for a person familiar with KVO/KVC MVC, but it can be mastered. Here are some tips, methods, paradigms, and other solutions might be found. If you happen to know of any, I\'d be happy to add them in and give any credit where it is due.</p>",
+    articles: [4,5,6,7]
   }
 
 ];
