@@ -8,6 +8,8 @@ sc_require('views/scroll_view');
 
 Brochurno.mainPage = SC.Page.design({
 
+  // layerId is your friend. Just recognize that the same problem exists: distinction
+  // Sproutcore doesn't tell you that you have a conflict.
   mainPane: SC.MainPane.design({
     layerId: 'brochurno-app',
 
@@ -39,19 +41,22 @@ Brochurno.mainPage = SC.Page.design({
 
     content: SC.SceneView.design({
       layerId: 'main-content',
-      layout: {top: 76,bottom: 30},
+      layout: {top: 76,bottom: 44},
       scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 
+    // this is the singular view for any article selected
     articleView: Brochurno.ScrollView.design({
-      layout: {top: 76,bottom: 30,left: 400,right: 0},
+      layout: {top: 76,bottom: 44,left: 400,right: 0},
       isVisibleBinding: SC.Binding.oneWay('Brochurno.articlesController*selection.length').bool(),
       contentView: SC.StaticContentView.design({
         layout: {right: 20},
         classNames: ['article-content'],
         contentBinding: SC.Binding.oneWay('Brochurno.articleController.fullBody'),
         mouseDown: function (evt) {
+          // This is a magical section where I'm able to trigger SC events from your HTML
+          // without using SC elements; just classes.
           var target = (evt.originalTarget || evt.target),classNames;
           if (!target || !target.className) {return NO;}
           classNames = target.className.split(' ');
@@ -59,37 +64,31 @@ Brochurno.mainPage = SC.Page.design({
             Brochurno.statechart.sendEvent('viewAttachment',parseInt(target.attributes['data-id'].value,10),target.attributes['data-type'].value);
             return;
           }
+          // Otherwise let the click pass through so that links will still work.
+          // returning NO/false means this doesn't handle the click anymore
           return NO;
         }
       })
     }),
 
     footer: SC.View.design({
-      layout: {bottom: 0,height: 30},
-      childViews: ['twitter'],
+      layout: {bottom: 0,height: 40,left: 0,right: 0},
+      childViews: ['twitter','github'],
       layerId: 'footer',
 
-      twitter: SC.View.design({
-        layout: {width: 100,height: 24,centerY: 0,right: 6},
-        classNames: ['link-button'],
+      twitter: SC.View.design(SCUI.SimpleButton,{
+        layout: {width: 32,height: 32,centerY: 0,right: 6},
+        classNames: ['link-button','twitter-icon'],
         icon: 'twitter-icon',
-        render: function (context,firstTime) {
-          if (firstTime) {
-            var twitter = '<a href="http://twitter.com/sevifives" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false">Follow @sevifives</a>';
-            context.push(twitter);
-            context.push('<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>');
-          }
-        }
+        action: 'openTwitter'
+      }),
+
+      github: SC.View.design(SCUI.SimpleButton,{
+        layout: {width: 32,height: 30, centerY: 0,right: 44},
+        classNames: ['link-button','github-icon'],
+        icon: 'github-icon',
+        action: 'openGithub'
       })
-
-      // github: SC.LabelView.design(SCUI.SImpleButton,{
-      //   layout: {width: 24,height: 24,centerY: 0,right: 6},
-      //   classNames: ['link-button'],
-      //   icon: 'github-icon',
-      //   action: 'openGithub'
-      // })
     })
-
   })
-
 });

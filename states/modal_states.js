@@ -29,6 +29,16 @@ Brochurno.mixin({
       }
     }),
 
+    openTwitter: function () {
+      window.location = 'http://twitter.com/#!/sevifives';
+    },
+
+    openGithub: function () {
+      window.location = 'https://github.com/sevifives/Brochurno';
+    },
+
+    // I'm not using this right now. I will in the future, possibly. Leaving it
+    // because it may give you some ideas.
     loadingArticle: SC.State.design({
       enterState: function () {
         var articlePane = SC.PickerPane.create({
@@ -88,6 +98,8 @@ Brochurno.mixin({
       }
     }),
 
+    // Same as above. These are things that were working, but I removed them
+    // because they seemed frivolous
     articleReady: SC.State.design({
       enterState: function () {
         var articlePane = Brochurno.applicationViewController.get('articlePane');

@@ -7,9 +7,7 @@
 // This page describes a part of the interface for your application.
 Brochurno.modalsPage = SC.Page.design({
 
-  loadingPanel: SC.PanelPane.design({
-  }),
-
+  // Outles are a method to access inner views of inner views
   containerContentOutlet: SC.outlet('attachmentViewer.contentView.contentViewer'),
 
   attachmentViewer: SC.PanelPane.design({
@@ -30,6 +28,7 @@ Brochurno.modalsPage = SC.Page.design({
     })
   }),
 
+  // The type of views I access for the types of attachments
   pdfViewer: SC.WebView,
 
   imageViewer: SC.ScrollView.design({

@@ -40,6 +40,7 @@ Brochurno.SectionView = SC.View.extend(
     });
     childViews.push(view);
 
+    // the list of articles the section has
     view = this.createChildView(Brochurno.ScrollView,{
       layout: {top: 0,left: 0,bottom: 0,width: 400},
       isVisibleBinding: SC.Binding.from('articles',object).notEmpty(null,NO).oneWay(),

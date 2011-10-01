@@ -187,4 +187,17 @@ strong {
   @include transition-duration(200);
 }
 
+.github-icon {
+  @include slice("images/icons/github_blue_black_cat_32.png");
+  &.active {
+    @include slice("images/icons/github_white_black_cat_32.png");
+  }
+}
+
+.twitter-icon {
+  @include slice("images/icons/twitter-icon.png");
+  &.active {
+    @include slice("images/icons/twitter-icon-active.png");
+  }
+}
 

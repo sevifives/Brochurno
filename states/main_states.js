@@ -21,8 +21,6 @@ Brochurno.mixin({
     }),
 
     brochurnoReady: SC.State.design({
-      enterState: function () {
-      },
 
       normalStartup: function () {
         var id = Brochurno.sectionsController.getPath('firstObject.guid');
@@ -56,9 +54,8 @@ Brochurno.mixin({
         var article = obj.firstObject ? obj.get('firstObject') : obj;
         if (!article) {return;}
         SC.routes.informLocation('article','article/%@/%@'.fmt(article.get('id'),article.get('tag')));
-      },
+      }
 
-      exitState: function () { }
     })
   })
 });
