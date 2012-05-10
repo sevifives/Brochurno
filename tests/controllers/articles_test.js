@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Brochurno.articlesController Unit Test
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals Brochurno module test ok equals same stop start */

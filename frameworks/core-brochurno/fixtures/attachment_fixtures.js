@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   CoreBrochurno.Attachment Fixtures
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals CoreBrochurno */

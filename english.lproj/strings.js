@@ -1,6 +1,6 @@
 // ==========================================================================
-// Project:   English Strings
-// Copyright: @2011 My Company, Inc.
+// Project: Brochurno
+// Copyright: @2011 Jason Dooley
 // ==========================================================================
 
 // Place strings you want to localize here.  In your app, use the key and

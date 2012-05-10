@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Brochurno.sectionController
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals Brochurno */

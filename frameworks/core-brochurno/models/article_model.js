@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   CoreBrochurno.Article
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals CoreBrochurno */

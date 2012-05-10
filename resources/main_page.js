@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Brochurno - mainPage
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals Brochurno */
@@ -39,10 +39,11 @@ Brochurno.mainPage = SC.Page.design({
       })
     }),
 
-    content: SC.SceneView.design({
+    content: SC.OptimizedContainerView.design({
       layerId: 'main-content',
       layout: {top: 76,bottom: 40},
-      scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
+      reuseChildren: YES,
+      // scenesBinding: SC.Binding.oneWay('Brochurno.sectionsController.scenes'),
       nowShowingBinding: SC.Binding.from('Brochurno.applicationViewController.contentSceneNowShowing').oneWay()
     }),
 

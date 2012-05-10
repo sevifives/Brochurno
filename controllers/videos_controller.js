@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Brochurno.videosController
+// Project: Brochurno
 // Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals Brochurno */

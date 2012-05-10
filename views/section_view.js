@@ -1,6 +1,6 @@
 // ==========================================================================
-// Project:   Brochurno.SectionView
-// Copyright: @2011 My Company, Inc.
+// Project: Brochurno
+// Copyright: @2011 Jason Dooley
 // ==========================================================================
 /*globals Brochurno */
 sc_require('views/scroll_view');
